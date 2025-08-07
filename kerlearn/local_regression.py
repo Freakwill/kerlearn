@@ -14,7 +14,7 @@ from sklearn.metrics.pairwise import *
 
 from base import LocalRegressorMixin, SelfLocalModelMixin
 
-from kernels import *
+from .kernels import *
 
 from utils import normalize
 
@@ -160,8 +160,6 @@ class SelfLocalMeanRegression(SelfLocalRegression, LocalMeanRegression):
             y_ = getattr(self, 'y_train_', y)
         return self.y_kernel(to_column_vector(y), to_column_vector(y_))
 
-
-from kernels import epanechnikov_kernel, make_kernel
 
 class EpanechnikovRegression(LocalMeanRegression):
 
